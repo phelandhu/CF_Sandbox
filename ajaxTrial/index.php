@@ -1,3 +1,13 @@
+<?php
+/***********************************************
+* Created:            Thu 06 Sep 2012 10:10:31 AM PDT 
+* Last Modified:      Thu 06 Sep 2012 10:10:31 AM PDT
+*
+* The HTML page of the AJAX test/demonstration, the part the user sees.
+*
+* Mike Browne - phelandhu@gmail.com
+***********************************************/
+?>
 <html> 
 <head> 
 <title>Welcome!</title> 

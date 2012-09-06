@@ -1,11 +1,12 @@
 #!/usr/bin/php
 <?php
 /***********************************************
+* Created:            Thu 06 Sep 2012 10:04:28 AM PDT 
+* Last Modified:      Thu 06 Sep 2012 10:04:28 AM PDT
+*
 * [LEFT BLANK FOR PROGRAM DISCRIPTION]
 *
-* Mike Browne - mbrowne@cantorgaming.com
-* Created:            2012-09-04 Tue 12:18 PM 
-* Last Modified:      TIMESTAMP
+* Mike Browne - phelandhu@gmail.com
 ***********************************************/
 	$exists = posix_access("/etc/passwd", POSIX_F_OK);
 	if($exists) echo "file exists\n";

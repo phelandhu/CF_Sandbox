@@ -1,9 +1,12 @@
 #!/usr/bin/php
 <?php
 /***********************************************
+* Created:            Thu 06 Sep 2012 10:04:32 AM PDT 
+* Last Modified:      Thu 06 Sep 2012 10:04:32 AM PDT
+*
 * just some demo for exploding a string
 *
-* Mike Browne - mbrowne@cantorgaming.com
+* Mike Browne - phelandhu@gmail.com
 ***********************************************/
 	if(PHP_SAPI == 'cli') {
 		echo "Hi There!\n";

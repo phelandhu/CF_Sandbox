@@ -1,0 +1,10 @@
+#!/usr/bin/php
+
+<?
+$ssh = ssh2_connect('192.168.1.85', 22);
+
+ssh2_auth_password($ssh, 'khess', 'password');
+
+$stream = ssh2_exec($ssh, 'touch testing.txt');
+
+?>

@@ -1,4 +1,6 @@
 <?php
+include_once('chromePHP/ChromePhp.php');
+ChromePhp::log('hello world');
 /*
 Directory Listing Script - Version 3
 ====================================
@@ -516,6 +518,7 @@ function f(n) {
 	?>
   </div>
 </div>
+<?php ChromePhp::log('hello world 2'); ?>
 <div id="copy">Directory Listing Script &copy;2008 Evoluted, <a href="http://www.evoluted.net/">Web Design Sheffield</a>.</div>
 </body>
 </html>

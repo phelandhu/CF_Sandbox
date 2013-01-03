@@ -9,9 +9,14 @@
 *
 * Mike Browne - phelandhu@gmail.com
 ***********************************************/
+//include some files
+require_once("mp3Utils.class.php");
 // connect to the database
 // simple right now
-$mysqli = new mysqli('localhost', 'webPlayer', 'webPlayer', 'web_player');
+$mysqli = new mysqli('localhost', 'webPlayerUser', 'webPlayer', 'webPlayer');
+
+$mp3utils = new mp3Utils();
+
 // Get the parameters
 parse_str(implode('&', array_slice($argv, 1)), $_GET);
 
@@ -42,9 +47,22 @@ if(isset($_GET["search"])||isset($_GET["order"])) {
 
 } else { // complete random search and order, more anarchy
 	echo "Hello, World\n";
-	echo searchMusic($mysqli, "artist", "van Halen", "year"), "\n";
+	$result = searchMusic($mysqli, "artist", "Aereda", "year");
+	while($row = $result->fetch_assoc()) {
+		echo $row["path"], "\n";
+		$data = $mp3utils::mp3Data($row["path"]);
+		if($data["status"]==1){
+			while(list($key, $value) = each($result))
+			{
+				print("$key: $value<br>\r\n");
+			}
+		} else {
+			
+		}
+		
+	}
 }
-
+	
 function searchMusic($mysqli, $searchField=NULL, $searchValue=NULL, $orderField=NULL) {
 
 	$response = NULL;
@@ -75,3 +93,4 @@ function orderByYear() {
 function isCli() {
 	return php_sapi_name()==="cli";
 }
+

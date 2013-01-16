@@ -1,7 +1,7 @@
 #ifndef READCONFIG
 	#define READCONFIG 1
 	#define MAXLEN 80
-	#define CONFIG_FILE "test.conf"
+	#define CONFIG_FILE "/etc/portListener.conf"
 
 	struct sample_parameters
 	{

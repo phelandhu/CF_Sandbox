@@ -12,8 +12,6 @@
  *     item: cone, flavor: vanilla, size: large
  */
 #include <stdio.h>
-#include <string.h>
-#include <ctype.h>
 #include "readConfig.h"
 
 /*

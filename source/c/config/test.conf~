@@ -1,0 +1,11 @@
+# This is a mock configuration file
+passwd:         compat
+group:          compat
+testOne:        compat
+testTwo:        compat
+#I want a random comment to test
+testThree:      compat
+testFour:       compat
+# about breaking stuff
+testFive:       compat
+testSix:        compat

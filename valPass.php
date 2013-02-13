@@ -6,7 +6,7 @@
 *
 * [LEFT BLANK FOR PROGRAM DISCRIPTION]
 *
-* Mike Browne - mbrowne@cantorgaming.com
+* Mike Browne - phelandhu@gmail.com
 ***********************************************/
 $fail1 = "abcdefg1";
 $fail2 = "1234567A";

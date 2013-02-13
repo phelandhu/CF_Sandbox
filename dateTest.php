@@ -6,7 +6,7 @@
 *
 * [LEFT BLANK FOR PROGRAM DISCRIPTION]
 *
-* Mike Browne - mbrowne@cantorgaming.com
+* Mike Browne - phelandhu@gmail.com
 ***********************************************/
 $date = date("Y-m");
 $dtsEnd = $date . '-1 01:59:59';

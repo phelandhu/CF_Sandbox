@@ -6,7 +6,7 @@
 *
 * [LEFT BLANK FOR PROGRAM DISCRIPTION]
 *
-* Mike Browne - mbrowne@cantorgaming.com
+* Mike Browne - phelandhu@gmail.com
 ***********************************************/
 		$nuDb = mysql_connect('lvcgdb-zp2', 'mbrowne', 'zae6Ieth');
 		mysql_select_db('cdb');

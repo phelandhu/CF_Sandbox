@@ -6,6 +6,6 @@
 *
 * [LEFT BLANK FOR PROGRAM DISCRIPTION]
 *
-* Mike Browne - mbrowne@cantorgaming.com
+* Mike Browne - phelandhu@gmail.com
 ***********************************************/
 print_r($_REQUEST);

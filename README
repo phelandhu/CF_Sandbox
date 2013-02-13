@@ -2,6 +2,6 @@ Dir
 ajaxTrial		Demonstration of an AJAX round trip
 books_n_mags		Demo code from Books and Magazines
 dlf			Directory Listing File - a code base I downloaded
-misc			Miscellaneous stuff that doens't fit anywhere else
+misc			Miscellaneous stuff that doesn't fit anywhere else
 source			General source code that may fit work with other stuff
 test			A test directory for anything that is goin on

@@ -6,7 +6,7 @@
 *
 * [LEFT BLANK FOR PROGRAM DISCRIPTION]
 *
-* Mike Browne - mbrowne@cantorgaming.com
+* Mike Browne - phelandhu@gmail.com
 ***********************************************/
 if (php_sapi_name() == 'cli' || php_sapi_name() == 'cgi') {
 	$cli = true;

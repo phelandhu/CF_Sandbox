@@ -9,40 +9,45 @@
 * Mike Browne - phelandhu@gmail.com
 ***********************************************/
 include_once("class/Util.class.php");
-include_once("class/MplayerControl.class.php");
 include_once("class/AjaxFunctions.class.php");
 // read in from the url
-$mplayerControl = new MplayerControl(exec('pwd'), "/sh/tmp/mplayer.fifo");
+$logFile = "/tmp/testOut.log";
+file_put_contents ( $logFile, "Beginning\n");
 
-$commandLineArgs = Util::parseCommandLine($argv);
-//Util::logArray($commandLineArgs);
+$commandLineArgs = $_GET;
+file_put_contents ( $logFile, file_get_contents($logFile) . "Command Line Arguments\n" . print_r($commandLineArgs, true) . "\n");
+Util::logArray($commandLineArgs);
+
 if(isset($commandLineArgs["method"])) {
-	$ajaxFunctions = new AjaxFunctions($mplayerControl);
-	switch ($commandLineArgs["method"]) {
-		case "updateUI":
-			echo $ajaxFunctions->updateUI();
-			break;
-		case "updatePlayer":
-			$action = $ajaxFunctions->convertCommand($commandLineArgs["action"]);
-			$response = $ajaxFunctions->updatePlayer($action, urldecode($commandLineArgs["file"]));
-			$result = substr($response, 0, 4);
-			if($result == "done") {
-				echo $result;
-			} else if(substr($result, 0, 3) == "Err") {
-				echo "An Error occured check the error log for the message";
-				Util::log($response);
-			}
-			break;
-		case "setVolume":
-			$response = $ajaxFunctions->setVolume($commandLineArgs["volume"]);
-			echo "Volume set to " . $commandLineArgs["volume"] . "%";
-			break;
-		case "getVolume":
-			$response = $ajaxFunctions->getVolume();
-			echo "Volume set to " . $commandLineArgs["volume"] . "%";
-			break;			
-		default:
-			break;
+	file_put_contents ( $logFile, file_get_contents($logFile) . "Command Line gotten\n");	
+	$ajaxFunctions = new AjaxFunctions("", "/tmp");
+	if($ajaxFunctions){
+		file_put_contents ( $logFile, file_get_contents($logFile) . "Method: " . $commandLineArgs["method"] . "\n");
+		switch ($commandLineArgs["method"]) {
+			case "updateUI":
+				$data = $ajaxFunctions->getCueSongData();
+				echo "artist: " . $data["artist"] . "&song: " . $data["song"];
+				break;
+			case "updateStream":
+//				Util::log($commandLineArgs["action"]);
+				file_put_contents ( $logFile, file_get_contents($logFile) . "Action: " . $commandLineArgs["action"] . "\n");
+				$ajaxFunctions->updateStream($commandLineArgs["action"], $commandLineArgs["file"]);
+				break;
+			case "setVolume":
+				/*
+				$response = $ajaxFunctions->setVolume($commandLineArgs["volume"]);
+				echo "Volume set to " . $commandLineArgs["volume"] . "%";
+				*/
+				break;
+			case "getVolume":
+				/*
+				$response = $ajaxFunctions->getVolume();
+				echo "Volume set to " . $commandLineArgs["volume"] . "%";
+				*/
+				break;			
+			default:
+				break;
+		}
 	}
 } else {
 	echo "Test5";

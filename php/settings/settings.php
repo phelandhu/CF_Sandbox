@@ -9,8 +9,13 @@
 * Mike Browne - mbrowne@cantorgaming.com
 ***********************************************/
 require_once("../bootstrap.php");
+require_once("mysqldatabase.class.php");
 require_once("settings.class.php");
 
-$settings = new settings($mysqli);
+$database = new MySqlDatabase(DB_SERVER, DB_SERVER_USERNAME, DB_SERVER_PASSWORD, DB_DATABASE);
+
+$settings = new settings($database);
 
 echo $settings->getSetting("NAME");
+print_r($settings->listSettings());
+print_r($settings->listSettingsNames());

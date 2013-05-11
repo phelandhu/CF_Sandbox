@@ -8,3 +8,10 @@
 *
 * Mike Browne - mbrowne@cantorgaming.com
 ***********************************************/
+require("crawler/crawler.class.php");
+
+$crawl = new Crawler('http://rockmanx.wordpress.com/2008/05/09/installing-ubuntus-apache2-local-webserver/');
+$images = $crawl->get('images');
+//print_r($images);
+$links = $crawl->get('links');
+//print_r($links);

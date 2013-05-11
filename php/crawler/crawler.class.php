@@ -45,9 +45,3 @@ class Crawler {
 		return $this->markup;
 	}
 }
-
-$crawl = new Crawler('http://rockmanx.wordpress.com/2008/05/09/installing-ubuntus-apache2-local-webserver/');
-$images = $crawl->get('images');
-//print_r($images);
-$links = $crawl->get('links');
-//print_r($links);
